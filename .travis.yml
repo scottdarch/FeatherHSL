@@ -29,6 +29,7 @@ cache:
 
 install:
     - pip install -U platformio
+    - platformio platform install atmelsam
     - platformio lib -g install 28
 
 script:
