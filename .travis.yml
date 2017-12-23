@@ -19,6 +19,9 @@ language: python
 python:
     - "2.7"
 
+env:
+    - PLATFORMIO_CI_SRC=src
+
 sudo: false
 cache:
     directories:
@@ -26,7 +29,8 @@ cache:
 
 install:
     - pip install -U platformio
+    - platformio lib -g install 28
 
 script:
-    - platformio run
+    - pio ci --project-conf=platformio.ini
 
